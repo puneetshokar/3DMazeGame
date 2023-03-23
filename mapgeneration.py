@@ -3,7 +3,7 @@ import random
 def make_maze(width,height,entrance,exit):
     status = True
     while status:
-        # create an empty 20 x 20 grid
+        # create an empty height x width grid
         maze = [['1']*width for i in range(height)]
 
         # generate a list of all the walls
@@ -48,13 +48,13 @@ def make_maze(width,height,entrance,exit):
         # add the entrance and exit
         maze[entrance[0]][entrance[1]] = '_'
         maze[exit[0]][exit[1]] = '_'
+        # check if maze is valid
         if is_path(maze,entrance, exit):
             status = False
             break
     return maze
 
 def is_path(maze, entrance, exit):
-    # find the entrance and exit coordinates
 
     # initialize a set to keep track of visited cells
     visited = set()
