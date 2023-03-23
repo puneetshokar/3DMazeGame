@@ -49,10 +49,13 @@ class RayCasting:
                 y_vert += dy
                 depth_vert += delta_depth
 
+            #set depth based on which intersection is closer to player
             if depth_vert < depth_hor:
                 depth = depth_vert
             else:
                 depth = depth_hor
+                
+            # temp method to visual rays
 
             pygame.draw.line(self.game.screen,'yellow',(100 * ox, 100 * oy),(100 * ox + 100 * depth * cos_a, 100 * oy + 100 * depth * sin_a), 2)
 
